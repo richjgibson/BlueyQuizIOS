@@ -776,18 +776,6 @@ struct ContentView: View {
                                       "Sticky Gecko_7",
                                       "Sticky Gecko_8",
                                       "Sticky Gecko_9",
-                                      "Dad Baby_1",
-                                      "Dad Baby_10",
-                                      "Dad Baby_11",
-                                      "Dad Baby_12",
-                                      "Dad Baby_2",
-                                      "Dad Baby_3",
-                                      "Dad Baby_4",
-                                      "Dad Baby_5",
-                                      "Dad Baby_6",
-                                      "Dad Baby_7",
-                                      "Dad Baby_8",
-                                      "Dad Baby_9",
                                       "Mum School_1",
                                       "Mum School_10",
                                       "Mum School_11",
@@ -1871,7 +1859,7 @@ struct ContentView: View {
                 showAlert = true
             }
         } else {
-            alertString = "You lose"
+            alertString = "Incorrect - that was \(getEpisodeString(episodeList[number]))"
             playerScore = 0
             showAlert = true
         }
@@ -1882,8 +1870,7 @@ struct ContentView: View {
         correctAnswer = Int.random(in: 0..<3)
     }
     
-    func getAnswerString() -> String {
-        let fullString = episodeList[correctAnswer]
+    func getEpisodeString(_ fullString: String) -> String {
         if let underscoreIndex = fullString.firstIndex(of: "_") {
             return String(fullString[..<underscoreIndex])
         } else {
@@ -1912,7 +1899,7 @@ struct ContentView: View {
                     VStack {
                         Text("Tap the scene from")
                             .foregroundStyle(.primary)
-                        Text("\(getAnswerString())")
+                        Text("\(getEpisodeString(episodeList[correctAnswer]))")
                             .foregroundStyle(.primary)
                             .font(.title)
                     }
