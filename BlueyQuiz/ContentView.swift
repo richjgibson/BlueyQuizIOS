@@ -1894,11 +1894,13 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             VStack{
+                Spacer()
                 
                 Text("Bluey Episode Quiz")
                     .font(.largeTitle.bold())
-                
                     .onAppear(perform: resetQuestion)
+                
+                Spacer()
                 
                 VStack(){
                     Text("Guess the Episode")
@@ -1930,8 +1932,12 @@ struct ContentView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 20))
                 .padding(20)
                 
+                Spacer()
+                
                 Text("Score: \(playerScore)")
                     .font(.largeTitle.bold())
+                
+                Spacer()
             }
             
         }
