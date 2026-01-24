@@ -1899,6 +1899,7 @@ struct ContentView: View {
                 Text("Bluey Episode Quiz")
                     .font(.largeTitle.bold())
                     .onAppear(perform: resetQuestion)
+                    .autocorrectionDisabled(true)
 //                Text("DEBUG: \(getEpisodeString(episodeList[0]))")
                 
                 Spacer()
